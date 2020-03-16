@@ -4,3 +4,6 @@ const reducer = Redux.combineReducers({
         return ['groceries', 'make dinner'];
       }
 });
+
+const store = Redux.createStore(reducer);
+
