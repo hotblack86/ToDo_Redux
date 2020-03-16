@@ -14,8 +14,12 @@
   <script>
 
 const reducer = Redux.combineReducers({
-      todos: () => {
-        return ['groceries', 'make dinner'];
+      todos: (state = [], action) => {
+        const newState = Object.assign([], state);
+        if (action.type == 'add') {
+          newState.push(action.item);
+        }
+        return newState;
       }
 });
 
@@ -38,6 +42,7 @@ document.getElementById('submit-todo').onclick = () => {
     type: 'add',
     item: document.getElementById('todo').value
   });
+  render();
 }
 
 
