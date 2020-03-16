@@ -11,6 +11,29 @@
   <button id="submit-todo">submit</button>
   <div id="container"></div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js'></script>
-  <script src='./index.js'></script>
+  <script>
+
+const reducer = Redux.combineReducers({
+      todos: () => {
+        return ['groceries', 'make dinner'];
+      }
+});
+
+const store = Redux.createStore(reducer);
+
+const render = () => {
+  const container = document.getElementById('container');
+  container.innerHTML = '';
+  const state = store.getState();
+
+  state.todos.forEach(todo => {
+    const e = document.createElement('div');
+    e.innerHTML = todo;
+    container.appendChild(e);
+  });
+}
+
+render();
+  </script>
 </body>
 </html>
