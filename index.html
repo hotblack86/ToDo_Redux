@@ -33,7 +33,15 @@ const render = () => {
   });
 }
 
-render();
+document.getElementById('submit-todo').onclick = () => {
+  store.dispatch({
+    type: 'add',
+    item: document.getElementById('todo').value
+  });
+}
+
+
+
   </script>
 </body>
 </html>
