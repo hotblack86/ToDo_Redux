@@ -1,0 +1,1 @@
+Basic ToDo App made using Redux, just for learning.
