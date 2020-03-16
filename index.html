@@ -52,10 +52,9 @@ document.getElementById('submit-todo').onclick = () => {
     type: 'add',
     item: document.getElementById('todo').value
   });
+  document.getElementById('todo').value = '';
   render();
 }
-
-
 
   </script>
 </body>
